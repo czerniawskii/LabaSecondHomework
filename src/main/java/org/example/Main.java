@@ -1,17 +1,30 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+
+        Driver firstDriver = new Driver("Max", 100);
+
+        TeslaX teslaCar = new TeslaX("Max", 2022);
+
+        Mercedes mercedes = new Mercedes("Max", 2024);
+
+        electricCarChargerStation shell = new electricCarChargerStation(50);
+
+        GasolineStation orlen = new GasolineStation(110);
+
+
+        if(firstDriver.getCashAmount() >= shell.getFullChargePrice()) {
+            System.out.println("You can charge your Tesla at Shell station");} else {
+            System.out.println("You need more money to charge your Tesla at Shell station");
         }
+
+        if(firstDriver.getCashAmount() >= orlen.getFullChargePrice()) {
+            System.out.println("You can fuel your Mercedes at Orlen station");} else {
+            System.out.println("You need more money to fuel your Mercedes at Orlen station");
+        }
+
+
     }
 }
