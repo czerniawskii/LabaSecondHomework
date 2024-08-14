@@ -1,16 +1,27 @@
-package org.example;
+package org.example.thirdHomeWork;
 
 public class Main {
     public static void main(String[] args) {
 
+        //3rd HomeWork
+
+        Car teslaCar = new TeslaX("Max", 2022);
+
+        Car mercedes = new Mercedes("Magda", 2024);
+
+        mercedes.speedUp();
+        teslaCar.speedUp();
+
+
+
+
+
+        /* 2nd HomeWork:
 
         Driver firstDriver = new Driver("Max", 100);
 
-        TeslaX teslaCar = new TeslaX("Max", 2022);
 
-        Mercedes mercedes = new Mercedes("Max", 2024);
-
-        electricCarChargerStation shell = new electricCarChargerStation(50);
+        ElectricCarChargerStation shell = new ElectricCarChargerStation(50);
 
         GasolineStation orlen = new GasolineStation(110);
 
@@ -24,7 +35,12 @@ public class Main {
             System.out.println("You can fuel your Mercedes at Orlen station");} else {
             System.out.println("You need more money to fuel your Mercedes at Orlen station");
         }
+*/
 
 
     }
-}
+
+
+
+
+    }

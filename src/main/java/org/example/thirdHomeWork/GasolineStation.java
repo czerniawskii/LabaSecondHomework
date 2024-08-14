@@ -1,28 +1,19 @@
-package org.example;
+package org.example.thirdHomeWork;
 
-public class electricCarChargerStation {
+public class GasolineStation {
     private String adress;
     private int fullChargePrice;
 
-    public electricCarChargerStation() {
-    };
-    public electricCarChargerStation(String adress, int fullChargePrice){
+    public GasolineStation(){};
+
+    public GasolineStation(String adress, int fullChargePrice){
         this.adress = adress;
         this.fullChargePrice = fullChargePrice;
     }
 
-    public electricCarChargerStation(int fullChargePrice){
+    public GasolineStation(int fullChargePrice){
         this.fullChargePrice = fullChargePrice;
     }
-/*
-    public boolean canTheDriverPayTheBill(){
-        if (fullChargePrice >= driver.cashAmount){
-            System.out.println("You can charge your car here");
-        } else {
-            System.out.println("You need more money");
-*/
-
-
 
     public String getAdress() {
         return adress;
