@@ -7,7 +7,7 @@ public class Main {
 
         Car teslaCar = new TeslaX("Max", 2022);
 
-        Car mercedes = new Mercedes("Magda", 2024);
+        Transport mercedes = new Mercedes("Magda", 2024);
 
         mercedes.speedUp();
         teslaCar.speedUp();
