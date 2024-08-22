@@ -1,8 +1,10 @@
 package org.example.thirdHomeWork;
 
+import org.example.thirdHomeWork.interfaces.*;
+
 import java.util.Objects;
 
-public class Mercedes extends Car {
+public class Mercedes extends Car implements IBeep {
     private String owner;
     protected int productionYear;
 
@@ -62,6 +64,26 @@ public class Mercedes extends Car {
 
     public void setProductionYear(int productionYear) {
         this.productionYear = productionYear;
+    }
+
+
+    @Override
+    public void beep() {
+        System.out.println("A Mercedes beeps!");
+    }
+
+    @Override
+    public void doSmth() {
+    }
+
+    @Override
+    public void driving() {
+
+    }
+
+    @Override
+    public void stopNow() {
+
     }
 
 
