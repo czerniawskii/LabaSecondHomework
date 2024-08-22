@@ -1,6 +1,9 @@
 package org.example.thirdHomeWork;
 
-public class ElectricCarChargerStation {
+import org.example.thirdHomeWork.interfaces.IRecharge;
+import org.example.thirdHomeWork.interfaces.IRefuel;
+
+public class ElectricCarChargerStation implements IRecharge {
     private String adress;
     private int fullChargePrice;
 
@@ -39,4 +42,13 @@ public class ElectricCarChargerStation {
     public void setFullChargePrice(int fullChargePrice) {
         this.fullChargePrice = fullChargePrice;
     }
+
+
+    @Override
+    public void rechargeElectroCar() {
+        System.out.println("Your car battery has been recharged");
+    }
+
+
 }
+
