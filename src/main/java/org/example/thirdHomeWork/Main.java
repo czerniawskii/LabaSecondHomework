@@ -1,17 +1,107 @@
 package org.example.thirdHomeWork;
-import org.example.thirdHomeWork.interfaces.*;
+
+import java.util.Scanner;
 
 
 public class Main {
+
+    //5th Homework
+
+    // approach TRY-CATCH
+
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int a = Integer.parseInt(scanner.next());
+        doSmth(a);
+    }
+
+    public static void doSmth(int a) {
+        if (a<0)
+            try {
+                throw new MyExceptions("My exceptions");
+            } catch (MyExceptions e) {
+                throw new RuntimeException(e);
+            }
+        System.out.println("Continue...");
+    }
+
+
+
+    //approach THROWS
+
+    public void anotherException() throws MyExceptions {
+    Scanner scanner2 = new Scanner(System.in);
+    int b = Integer.parseInt(scanner2.next());
+    doSmthElse(b);
+    }
+
+    public static void doSmthElse (int b) throws MyExceptions {
+
+        if (b>0)
+            throw new MyExceptions("My exceptions");
+
+}
+
+    //approach Try-catch with resources
+
+
+    public void tryCatchWithResources() {
+
+        try (Scanner scanner3 = new Scanner(System.in);) {
+            {
+                throw new MyExceptions("My exceptions");
+            }
+        } catch (MyExceptions e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+        // Create 5 custom exceptions
+
+
+        // Handle exceptions in 2 ways.
+        // 1 way = method throws...
+        // 2 way = try/catch
+
+        //Use try-catch with resources.
+
+/*
+        try {
+            FileReader fileReader = new FileReader("org/example/thirdHomeWork/test.txt");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("All is good");
+
+        // OR
+
+        try { FileReader fileReader2 = new FileReader("org/example/thirdHomeWork/test.txt");
+         } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } System.out.println("All is good");
+
+*/
+
 
 
 
        //4th HomeWork
 
-        TeslaX newTesla = new TeslaX();
+        /*
+        try { TeslaX newTesla = new TeslaX();
         newTesla.beep();
-        newTesla.doSmth();
+        newTesla.doSmth(); } catch (IndexOutOfBoundsException e) {System.err.println("IndexOutOfBoundsException: " + e.getMessage());}
 
         Mercedes newMercedes = new Mercedes();
         newMercedes.beep();
@@ -37,7 +127,7 @@ public class Main {
         ThisIsFinalClass iAmFinal = new ThisIsFinalClass();
         iAmFinal.showMeFinalIntValue();
 
-
+*/
 
 
         //3rd HomeWork
@@ -80,4 +170,3 @@ public class Main {
 
 
 
-    }
