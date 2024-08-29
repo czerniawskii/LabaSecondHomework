@@ -1,15 +1,69 @@
 package org.example.thirdHomeWork;
 
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
 
+    public static void main(String[] args) {
+
+
+
+        // 6th Homework
+
+    // 1. ArrayList
+    ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        System.out.println("ArrayList: " + arrayList);
+
+    // 2. LinkedList
+    LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("Hello");
+        linkedList.add("World");
+        linkedList.add("!");
+        System.out.println("LinkedList: " + linkedList);
+
+    // 3. HashSet
+    HashSet<Double> hashSet = new HashSet<>();
+        hashSet.add(1.1);
+        hashSet.add(2.2);
+        hashSet.add(3.3);
+        System.out.println("HashSet: " + hashSet);
+
+    // 4. TreeSet
+    TreeSet<String> treeSet = new TreeSet<>();
+        treeSet.add("Banana");
+        treeSet.add("Apple");
+        treeSet.add("Orange");
+        System.out.println("TreeSet: " + treeSet);
+
+    // 5. PriorityQueue
+    PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        priorityQueue.add(10);
+        priorityQueue.add(20);
+        priorityQueue.add(15);
+        System.out.println("PriorityQueue: " + priorityQueue);
+
+
+    //6. LinkedList with generics
+
+    TeslaX bigTesla = new TeslaX("Leon", 2000);
+    LinkedList<TeslaX> carList = new LinkedList<TeslaX>();
+    carList.add(bigTesla);
+    System.out.println(carList);
+
+
+    }
+
+
     //5th Homework
+
+    /*
 
     // approach TRY-CATCH
 
-    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         int a = Integer.parseInt(scanner.next());
@@ -27,7 +81,7 @@ public class Main {
     }
 
 
-
+*.
     //approach THROWS
 
     public void anotherException() throws MyExceptions {
