@@ -9,7 +9,7 @@ public class Main {
 
 
 
-        // 6th Homework
+        // 6th Homework - re doing it
 
 
     String[] b = new String[8];
