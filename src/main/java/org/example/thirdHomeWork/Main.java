@@ -11,51 +11,127 @@ public class Main {
 
         // 6th Homework
 
-    // 1. ArrayList
-    ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
-        System.out.println("ArrayList: " + arrayList);
 
-    // 2. LinkedList
-    LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.add("Hello");
-        linkedList.add("World");
-        linkedList.add("!");
-        System.out.println("LinkedList: " + linkedList);
+    String[] b = new String[8];
+    int[] c = new int [10];
+    List<String> a = new ArrayList<>();
+    a.add("First");
+    List<Integer> d = new ArrayList<>();
 
-    // 3. HashSet
-    HashSet<Double> hashSet = new HashSet<>();
-        hashSet.add(1.1);
-        hashSet.add(2.2);
-        hashSet.add(3.3);
-        System.out.println("HashSet: " + hashSet);
-
-    // 4. TreeSet
-    TreeSet<String> treeSet = new TreeSet<>();
-        treeSet.add("Banana");
-        treeSet.add("Apple");
-        treeSet.add("Orange");
-        System.out.println("TreeSet: " + treeSet);
-
-    // 5. PriorityQueue
-    PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-        priorityQueue.add(10);
-        priorityQueue.add(20);
-        priorityQueue.add(15);
-        System.out.println("PriorityQueue: " + priorityQueue);
+    List<Student> students = new ArrayList<>();
+    Student student1 = new Student("Piotr", 22);
+    Student student2 = new Student("Anna", 33);
+    students.add(student1);
+    students.add(student2);
+        System.out.println(students);
+    students.size();
+    students.get(0);
+    students.remove(1);
 
 
-    //6. LinkedList with generics
+    // Set - hashset, linked hashset, treeset
 
-    TeslaX bigTesla = new TeslaX("Leon", 2000);
-    LinkedList<TeslaX> carList = new LinkedList<TeslaX>();
-    carList.add(bigTesla);
-    System.out.println(carList);
+        //hashset (unsorted)
+
+        Set<Student> set = new HashSet<>();
+        set.add(new Student("Ivan", 20));
+        set.add(new Student("Ivan", 20));
+        System.out.println(set);
+
+        for (int i = 0; i<100; i++) {
+            set.add(new Student("Max" + i, i));
+            System.out.println(set);
+        }
+
+        //linked hashset (sorted - insertion order)
+
+        Set<Student> setL = new LinkedHashSet<>();
+
+        for (int g = 100; g>0; g--) {
+            setL.add(new Student("Maxi" + g, g));
+            System.out.println(setL);
+        }
 
 
+        //treeset - sorted (need to implement order)
+
+        Set<Student> setT = new TreeSet<>();
+        for (int t = 1000; t>900; t--){
+            setT.add(new Student("Luna" + t, t));
+            System.out.println(setT);
+        }
+
+
+        // Comparator
+
+        StudentComparator stuComp = new StudentComparator();
+        Set<Student> setX = new TreeSet<>(stuComp);
+        for (int h = 0; h<27; h++){
+            setT.add(new Student("Seth" + h, h));
+            System.out.println(stuComp);
+        }
+
+
+        // Queue - sorted
+
+        Queue<String> q = new PriorityQueue<>();
+        q.add("C");
+        q.add("B");
+        q.add("A");
+
+
+        System.out.println(q.peek());
+        System.out.println(q.peek());
+        System.out.println(q.peek());
+        System.out.println(q);
+
+        System.out.println(q.poll());
+        System.out.println(q.poll());
+        System.out.println(q.poll());
+        System.out.println(q);
+
+
+        //Stack - unsorted
+
+        Stack<String> s = new Stack<>();
+        s.add("X");
+        s.add("XX");
+        s.add("XXX");
+        System.out.println(s);
+
+        System.out.println(s.peek());
+        System.out.println(s.peek());
+        System.out.println(s.peek());
+        System.out.println(s);
+
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s);
+
+
+        // Map
+
+        Map<String, Integer> z = new HashMap<>();
+        z.put("First", 1);
+        z.put("Second", 2);
+        z.put("Third", 3);
+        z.put("First", 108);
+        System.out.println(z);
+
+
+        // custom LinkedList
+
+        CustomLinkedList<Mercedes> list = new CustomLinkedList<>();
+        list.add(new Mercedes("Dany", 2009));
+        list.add(new Mercedes("Helen", 2024));
+        list.add(new Mercedes("Artsiom", 1990));
+
+        System.out.print("CustomLinkedList: ");
+        list.printList();
     }
+
+
 
 
     //5th Homework
