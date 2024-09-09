@@ -1,16 +1,50 @@
 package org.example.thirdHomeWork;
-
-import java.util.*;
+import org.apache.commons.io.FileUtils;
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        //8th homework
+
+        File shakespear = new File("src/main/java/org.example.thirdHomeWork/shakespear.txt");
+
+        String fileToString = FileUtils.readFileToString(shakespear, StandardCharsets.UTF_8);
+
+        String[] allWords = fileToString.toLowerCase().split("\\W+");
+
+        Set<String> uniqueWords = new HashSet<>();
+
+        for (String word : allWords) {
+
+            if (!word.trim().isEmpty()) {
+                uniqueWords.add(word);
+            }
+        }
+
+        String summary = "The numbers of the unique words is " + uniqueWords.size();
+
+        FileUtils.writeStringToFile(shakespear, summary, StandardCharsets.UTF_8, true);
+
+        System.out.println(summary);
+
+    }
+}
+
+
+
+
 
 
 
         // 6th Homework - re doing it
-
+/*
 
     String[] b = new String[8];
     int[] c = new int [10];
@@ -131,7 +165,7 @@ public class Main {
         list.printList();
     }
 
-
+*/
 
 
     //5th Homework
@@ -295,7 +329,7 @@ public class Main {
 */
 
 
-    }
+
 
 
 
