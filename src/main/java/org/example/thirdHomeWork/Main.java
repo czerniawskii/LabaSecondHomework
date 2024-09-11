@@ -13,7 +13,7 @@ public class Main {
 
         //8th homework
 
-        File shakespear = new File("src/main/java/org.example.thirdHomeWork/shakespear.txt");
+        File shakespear = new File("src/main/java/org/example/thirdHomeWork/shakespear.txt");
 
         String fileToString = FileUtils.readFileToString(shakespear, StandardCharsets.UTF_8);
 
@@ -28,7 +28,7 @@ public class Main {
             }
         }
 
-        String summary = "The numbers of the unique words is " + uniqueWords.size();
+        String summary = "\nThe numbers of the unique words is " + uniqueWords.size();
 
         FileUtils.writeStringToFile(shakespear, summary, StandardCharsets.UTF_8, true);
 
