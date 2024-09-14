@@ -1,16 +1,130 @@
 package org.example.thirdHomeWork;
-import org.apache.commons.io.FileUtils;
-import java.io.File;
+
+import org.example.thirdHomeWork.lambda.*;
+import org.example.thirdHomeWork.lambda.StudentComparator;
+
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
+
+
+        //9th homework
+
+        //Create 3 functional interfaces
+
+        IMultiplicate iMultiplicate = (a, b) -> a * b;
+        System.out.println("Result is " + iMultiplicate.multiply(6, 66));
+
+        IStringFormater toLowerCaseFormatter = str -> str.toLowerCase();
+        System.out.println(toLowerCaseFormatter.format("TRULALA I AM SPEAKING WITH VERY BIG CAPITAL LETTERS!!!"));
+
+        IExtract iExtract = (c, d) -> c - d;
+        System.out.println("Extraction gives " + iExtract.minus(100, 100));
+
+
+        // Create 3 custom Lambda functions with generics.
+
+        IMerge<String> stringIMerge = (e, g) -> e + " " + g;
+        System.out.println("Merged Strings: " + stringIMerge.merge("This is first String", "And this is another, completely separated String"));
+
+        ITransform<Integer, String> intToString = (input) -> "The number is " + input;
+        System.out.println(intToString.transform(666));
+
+        ITransform<String, Integer> stringLength = (input) -> input.length();
+        System.out.println("String length is: " + stringLength.transform("AVADAKEDAVRA"));
+
+        IComparate<Integer> integerIComparate = (x, z) -> Integer.compare(x, z);
+        System.out.println("Comparison result is " + integerIComparate.compare(300, 200));
+
+
+        //Create 3 complex Enums(with fields, methods, blocks).
+
+        double daysInYears;
+        for (Planet planet : Planet.values()){
+            System.out.println(planet.name() + " turns around Sun in " + planet.daysToYears() + " years.");
+        }
+
+        for (Zodiac zodiac : Zodiac.values()){
+            System.out.println("Ruler of " + zodiac.name() + " is " + zodiac.getRulingPlanet());
+        }
+
+        for (Houses house : Houses.values()) {
+            System.out.println(house);
+        }
+
+
+
+
+
+        //Extra hometask
+        //Use at least 5 lambda functions from the java.util.function package.
+
+
+
+
+
+
+
+
+        /*
+
+
+        public void selectBattery(Battery battery){
+            switch (battery) {
+                case LOW_POWER:
+                    System.out.println("low");
+                case HIGH_POWER:
+                    System.out.println("high");
+
+            }
+        }
+
+
+        for (CCs cCs:
+             CCs.values() ){
+            System.out.println(cCs.getTitle());
+            System.out.println(cCs.getDescription());
+          System.out.println("============");
+
+        }
+
+
+
+
+        CCs.VISA.getTitle();
+
+        List<Student> k = new ArrayList<>();
+        k.stream().filter(x -> x.age>18).map(y -> y.name).toList();
+
+
+
+        ICalculate z = (g, h) -> g + h;
+        System.out.println(z.add(25, 48));
+
+        ICalculate p = (q, w) -> q - w;
+        System.out.println(p.add(10, 10));
+
+        Comparator<Student> lambdaInt = (x, y) -> x.age - y.age;
+        Comparator<Student> lambdaString = (v, w) -> v.name.compareTo(w.name);
+
+        Set<Student> o = new TreeSet<Student>(lambdaInt);
+        Set<Student> f = new TreeSet<Student>(lambdaString);
+
+    }
+
+    public void doSmth(ICalculate iCalculate){
+
+        iCalculate.add(12, 23);
+    }
+*/
+
+        /*
         //8th homework
 
         File shakespear = new File("src/main/java/org/example/thirdHomeWork/shakespear.txt");
@@ -44,7 +158,7 @@ public class Main {
 
 
         // 6th Homework - re doing it
-/*
+
 
     String[] b = new String[8];
     int[] c = new int [10];
@@ -168,7 +282,7 @@ public class Main {
 */
 
 
-    //5th Homework
+        //5th Homework
 
     /*
 
@@ -258,9 +372,7 @@ public class Main {
 */
 
 
-
-
-       //4th HomeWork
+        //4th HomeWork
 
         /*
         try { TeslaX newTesla = new TeslaX();
@@ -329,8 +441,4 @@ public class Main {
 */
 
 
-
-
-
-
-
+    }}
