@@ -1,19 +1,143 @@
 package org.example.thirdHomeWork;
 
-import org.example.thirdHomeWork.lambda.*;
-import org.example.thirdHomeWork.lambda.StudentComparator;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
-import java.io.IOException;
-import java.util.Set;
-import java.util.TreeSet;
+import java.lang.reflect.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.ArrayList;
 
 
 public class Main {
 
-    public static void main(String[] args) {
+    //debug info warning error
+
+
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+
+        //Add 7 collection streaming in the hierarchy with terminal and non-terminal operations
+
+        List<Employee> employees = Arrays.asList(
+                new Employee("Alice", 25, 50000),
+                new Employee("Bob", 35, 75000),
+                new Employee("Charlie", 45, 120000),
+                new Employee("Diana", 32, 85000),
+                new Employee("Eve", 40, 95000),
+                new Employee("Frank", 29, 60000)
+        );
+
+        // 1. Filter: Employees older than 30
+        // 2. Map: Extract their salaries
+        // 3. Peek: Print each salary for debugging
+        // 4. Sorted: Sort the salaries in descending order
+        // 5. Limit: Take the top 3 highest salaries
+        // 6. forEach: Print these employees
+        // 7. Reduce: Sum the top 3 salaries
 
 
 
+
+        double totalTop3Salaries = employees.stream()
+                .filter(employee -> employee.getAge() > 30)          // 1. Filter employees older than 30
+                .map(Employee::getSalary)                            // 2. Map to their salaries
+                .peek(salary -> LOGGER.info("Salary: " + salary)) // 3. Peek: Print each salary
+                .sorted(Comparator.reverseOrder())                   // 4. Sort salaries in descending order
+                .limit(3)                                            // 5. Limit to the top 3 salaries
+                .peek(salary -> LOGGER.info("Top salary: " + salary)) // 6. Peek to print top 3 salaries
+                .reduce(0.0, Double::sum);                           // 7. Reduce: Sum the salaries
+
+        // Output the total salary of the top 3 highest-paid employees
+        LOGGER.info("Total sum of top 3 salaries: " + totalTop3Salaries);
+
+
+        // Get the Employee class object using reflection
+        Class<?> employeeClass = Class.forName("Employee");
+
+        // Print class name
+        System.out.println("Class Name: " + employeeClass.getName());
+
+        // Extract and display information about fields
+        System.out.println("\nFields:");
+        Field[] fields = employeeClass.getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println("Field: " + field.getName() +
+                    ", Type: " + field.getType().getSimpleName() +
+                    ", Modifiers: " + Modifier.toString(field.getModifiers()));
+        }
+
+        // Extract and display information about constructors
+        System.out.println("\nConstructors:");
+        Constructor<?>[] constructors = employeeClass.getConstructors();
+        for (Constructor<?> constructor : constructors) {
+            System.out.println("Constructor: " + constructor.getName() +
+                    ", Parameters: " + constructor.getParameterCount());
+        }
+
+        // Extract and display information about methods
+        System.out.println("\nMethods:");
+        Method[] methods = employeeClass.getDeclaredMethods();
+        for (Method method : methods) {
+            System.out.println("Method: " + method.getName() +
+                    ", Return Type: " + method.getReturnType().getSimpleName() +
+                    ", Parameters: " + method.getParameterCount() +
+                    ", Modifiers: " + Modifier.toString(method.getModifiers()));
+        }
+
+        // Step 2: Create an object using reflection
+        Constructor<?> constructor = employeeClass.getConstructor(String.class, int.class, double.class);
+        Object employeeObject = constructor.newInstance("John Doe", 30, 75000);
+
+        // Step 3: Call a method using reflection
+        Method displayInfoMethod = employeeClass.getMethod("displayInfo");
+        displayInfoMethod.invoke(employeeObject);
+
+
+
+
+
+
+
+
+    }
+}
+
+        //Using reflection extract information(modifiers, return types, parameters, etc.)
+        // about fields, constructors, methods. Create object and call method using the only reflection.
+
+
+
+
+
+
+
+
+      //  System.out.println("Example of SOUT command execution");
+
+
+        //LOGGER.error("Example of Logger execution");
+        //LOGGER.debug("Example of Logger execution");
+        //LOGGER.warning("Example of Logger execution");
+        //LOGGER.info("Example of Logger execution");
+
+//REFLECTION - represent our Class like object of class CLass
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
         //9th homework
 
         //Create 3 functional interfaces
@@ -72,7 +196,7 @@ public class Main {
 
 
 
-        /*
+
 
 
         public void selectBattery(Battery battery){
@@ -441,4 +565,3 @@ public class Main {
 */
 
 
-    }}
