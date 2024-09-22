@@ -15,10 +15,39 @@ public class Main {
     //debug info warning error
 
 
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+    //private static final Logger LOGGER = LogManager.getLogger(Main.class);
+    //throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
-    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
+    public static void main(String[] args) {
+
+        //Threads task
+
+
+    PreparingMilk preparingMilk = new PreparingMilk();
+    ChangingDiapers changingDiapers = new ChangingDiapers();
+    Thread lullabyingBaby = new Thread(new LullabyingBaby());
+
+    preparingMilk.start();
+    changingDiapers.start();
+    lullabyingBaby.start();
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+         /*
         //Add 7 collection streaming in the hierarchy with terminal and non-terminal operations
 
         List<Employee> employees = Arrays.asList(
@@ -137,7 +166,7 @@ public class Main {
 
 
 
- /*
+
         //9th homework
 
         //Create 3 functional interfaces
